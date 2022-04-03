@@ -1,10 +1,10 @@
-const express = require('express')
-const router = express.Router()
-const customerController = require('../app/controllers/CustomerController')
+const express = require('express');
+const router = express.Router();
+const customerController = require('../app/controllers/CustomerController');
 
-router.use('/profile', customerController.profile)
-router.use('/login', customerController.login)
-router.use('/signup', customerController.signup)
-router.use('/', customerController.home)
+router.get('/profile', customerController.profile);
+router.get('/login', customerController.login);
+router.get('/signup', customerController.signup);
+router.get('/', customerController.home);
 
-module.exports = router
+module.exports = router;
