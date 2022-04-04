@@ -6,7 +6,7 @@
    <div id="search-btn" class="fas fa-search icons"></div>
 
    <nav class="navbar">
-      <a href="#home">home</a>
+      <a href="/">home</a>
       <a href="#menu">menu</a>
       <a href="#about">about</a>
       <span class="space"></span>
@@ -17,7 +17,7 @@
 
    <a href="#" class="fas fa-shopping-cart icons"></a>
 
-   <a href="#home" class="logo"><img src="images/logo.png" alt=""></a>
+   <a href="/" class="logo"><img src="images/logo.png" alt=""></a>
 
    <form action="" class="search-form">
       <input type="search" name="" placeholder="search here..." id="search-box">
@@ -82,7 +82,10 @@
       
       {{#each products}}
       <div class="box" data-aos="fade-up" data-aos-delay="150">
-         <img src="{{this.image}}" alt="">
+         <a href="/products/{{this.slug}}">
+            <img src="{{this.image}}" alt="">
+         </a>
+         
          <div class="content">
             <div class="stars">
                <i class="fas fa-star"></i>
@@ -91,8 +94,13 @@
                <i class="fas fa-star"></i>
                <i class="fas fa-star-half-alt"></i>
             </div>
-            <h3>{{this.name}}</h3>
+
+            <a href="/{{this.slug}}">
+               <h3>{{this.name}}</h3>
+            </a>
+            
             <div class="price">${{this.price}}</div>
+            <p>{{this.description}}</p>
             <a href="#" class="btn">add to cart</a>
          </div>
       </div>
@@ -197,7 +205,14 @@
 
    <div class="row">
 
-      <iframe data-aos="fade-up" data-aos-delay="150" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15076.89592087332!2d72.8319697277345!3d19.14167056419224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1639924799744!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+      <iframe 
+         data-aos="fade-up" 
+         data-aos-delay="150" 
+         class="map" 
+         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3699.6533046235395!2d106.68245939617115!3d10.761747993366097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1c06f4e1dd%3A0x43900f1d4539a3d!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBLaG9hIGjhu41jIFThu7Egbmhpw6puIC0gxJDhuqFpIGjhu41jIFF14buRYyBnaWEgVFAuSENN!5e0!3m2!1svi!2s!4v1649063181408!5m2!1svi!2s" 
+         allowfullscreen="" 
+         loading="lazy">
+      </iframe>
 
       <div class="form">
 
@@ -309,7 +324,7 @@
 <section class="footer">
 
    <div class="links">
-      <a href="#home" class="btn">home</a>
+      <a href="/" class="btn">home</a>
       <a href="#menu" class="btn">menu</a>
       <a href="#about" class="btn">about</a>
       <a href="#reviews" class="btn">reviews</a>

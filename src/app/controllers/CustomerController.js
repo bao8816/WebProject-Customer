@@ -34,4 +34,4 @@ class CustomerController {
     };
 };
 
-module.exports = new CustomerController;
+module.exports = new CustomerController();
