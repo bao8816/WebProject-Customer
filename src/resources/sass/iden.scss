@@ -1,7 +1,7 @@
 * {box-sizing: border-box}
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+  input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -53,7 +53,10 @@ button:hover {
   border:1px solid white;
   width: 50%;
 }
-
+.login9{
+  border: 1px solid #ddd;
+  width: 20%;
+}
 html{
   background-color: black;
 }

@@ -1,4 +1,5 @@
 const Product = require('../models/Product');
+const accounts = require('../models/Account');
 const { multipleMongooseToObject } = require('../../util/mongoose');
 
 class CustomerController {
@@ -31,6 +32,42 @@ class CustomerController {
     //GET "/signup"
     signup(req, res) {
         res.render('signup', {layout: 'iden-layout'})
+    };
+    signupr(req,res, next){
+        var regExp = /^[A-Za-z][\w$.]+@[\w]+\.\w+$/;
+        if (regExp.test(req.body.email) && (req.body.password==req.body.rpassword)) {
+            accounts.find({email: req.body.email})
+                .then(data => {
+                    if (data[0]==undefined){
+                        const account=new accounts(req.body);
+                        account.save()
+                            .then(()=> res.redirect('/'))
+                            .catch(error=>{
+                        });
+                    } else {
+                        res.render('signup', {layout: 'iden-layout',errors: 'Error! Email already exists!'})
+                    }
+                });
+        }  else {
+            res.render('signup', {layout: 'iden-layout',errors: 'Error! email is incorrect,can not register'})
+        };
+    };
+    loginr(req,res,next){
+        var regExp = /^[A-Za-z][\w$.]+@[\w]+\.\w+$/;
+        if (regExp.test(req.body.email)) {
+            accounts.find({email: req.body.email})
+                .then(data => {
+                    if (data[0]!=undefined){
+                        if(data[0].email==req.body.email && data[0].password==req.body.password){
+                            res.redirect('/')
+                        } else  res.render('login', {layout: 'iden-layout',errors: 'Error! Email/Password is incorrect!'})
+                    } else {
+                        res.render('login', {layout: 'iden-layout',errors: 'Error! Unregistered email'})
+                    }
+                });
+        }  else {
+            res.render('login', {layout: 'iden-layout',errors: 'Error! email is incorrect'})
+        };
     };
 };
 

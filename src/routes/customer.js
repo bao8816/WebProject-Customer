@@ -8,5 +8,6 @@ router.get('/login', customerController.login);
 router.get('/signup', customerController.signup);
 router.get('/:slug', productController.show);
 router.get('/', customerController.home);
-
+router.post('/signup',customerController.signupr);
+router.post('/login',customerController.loginr);
 module.exports = router;
