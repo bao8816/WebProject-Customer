@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "6249523c93593192db6e344f"
+  },
+  "name": "Burger1",
+  "description": "description for burger1",
+  "image": "images/product-1.png",
+  "price": "1",
+  "slug": "burger1"
+},{
+  "_id": {
+    "$oid": "6249623493593192db6e3452"
+  },
+  "name": "Burger2",
+  "description": "description for burger2",
+  "image": "images/product-2.png",
+  "price": "2",
+  "slug": "burger2"
+},{
+  "_id": {
+    "$oid": "6249624593593192db6e3453"
+  },
+  "name": "Burger3",
+  "description": "description for burger3",
+  "image": "images/product-3.png",
+  "price": "5",
+  "slug": "burger3"
+},{
+  "_id": {
+    "$oid": "62497fd1fd8f71b1230d7a44"
+  },
+  "name": "Burger4",
+  "description": "description for burger4",
+  "image": "images/product-4.png",
+  "price": "8",
+  "slug": "burger4"
+},{
+  "_id": {
+    "$oid": "62497febfd8f71b1230d7a45"
+  },
+  "name": "Burger5",
+  "description": "description for burger5",
+  "image": "images/product-5.png",
+  "price": "5",
+  "slug": "burger5"
+},{
+  "_id": {
+    "$oid": "62497ff6fd8f71b1230d7a46"
+  },
+  "name": "Burger6",
+  "description": "description for burger6",
+  "image": "images/product-6.png",
+  "price": "5",
+  "slug": "burger6"
+},{
+  "_id": {
+    "$oid": "624b34f4986486f5f9cbcb4e"
+  },
+  "name": "test",
+  "description": "test",
+  "image": "test",
+  "price": 123,
+  "slug": "test",
+  "__v": 0
+}]

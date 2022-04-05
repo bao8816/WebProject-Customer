@@ -33,6 +33,8 @@ class CustomerController {
     signup(req, res) {
         res.render('signup', {layout: 'iden-layout'})
     };
+
+    //POST "/signup"
     signupr(req,res, next){
         var regExp = /^[A-Za-z][\w$.]+@[\w]+\.\w+$/;
         if (regExp.test(req.body.email) && (req.body.password==req.body.rpassword)) {
@@ -52,6 +54,8 @@ class CustomerController {
             res.render('signup', {layout: 'iden-layout',errors: 'Error! email is incorrect,can not register'})
         };
     };
+
+    //POST "/login"
     loginr(req,res,next){
         var regExp = /^[A-Za-z][\w$.]+@[\w]+\.\w+$/;
         if (regExp.test(req.body.email)) {
