@@ -1,5 +1,5 @@
 const Product = require('../models/Product');
-const accounts = require('../models/Account');
+const Customer_account = require('../models/Customer_account');
 const { multipleMongooseToObject } = require('../../util/mongoose');
 
 class CustomerController {
@@ -35,13 +35,13 @@ class CustomerController {
     };
 
     //POST "/signup"
-    signupr(req,res, next){
+    signupr(req, res, next){
         var regExp = /^[A-Za-z][\w$.]+@[\w]+\.\w+$/;
-        if (regExp.test(req.body.email) && (req.body.password==req.body.rpassword)) {
-            accounts.find({email: req.body.email})
+        if (regExp.test(req.body.email) && (req.body.password == req.body.rpassword)) {
+            Customer_account.find({email: req.body.email})
                 .then(data => {
-                    if (data[0]==undefined){
-                        const account=new accounts(req.body);
+                    if (data[0] == undefined){
+                        const account=new Customer_account(req.body);
                         account.save()
                             .then(()=> res.redirect('/'))
                             .catch(error=>{
@@ -56,10 +56,10 @@ class CustomerController {
     };
 
     //POST "/login"
-    loginr(req,res,next){
+    loginr(req, res, next){
         var regExp = /^[A-Za-z][\w$.]+@[\w]+\.\w+$/;
         if (regExp.test(req.body.email)) {
-            accounts.find({email: req.body.email})
+            Customer_account.find({email: req.body.email})
                 .then(data => {
                     if (data[0]!=undefined){
                         if(data[0].email==req.body.email && data[0].password==req.body.password){

@@ -81,7 +81,9 @@
    <div class="box-container">
       
       {{#each products}}
-      <div class="box" data-aos="fade-up" data-aos-delay="150">
+      <div class="box" data-aos="fade-up" 
+      {{!-- data-aos-delay="150" --}}
+      >
          <a href="/products/{{this.slug}}">
             <img src="{{this.image}}" alt="">
          </a>

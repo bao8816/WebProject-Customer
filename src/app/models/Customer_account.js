@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Account = new Schema({
+const Customer_account = new Schema({
     email: {type: String,required: true},
     password: {type: String,required: true},
 });
 
-module.exports = mongoose.model('Account', Account);
+module.exports = mongoose.model('Customer_account', Customer_account);
