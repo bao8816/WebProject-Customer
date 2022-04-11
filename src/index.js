@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
+const methodOverride = require('method-override');
 const app = express();
 
 //Require Route
@@ -8,11 +9,14 @@ const route = require('./routes');
 
 //Database
 const db = require('./config/db');
+const methodOverride = require('method-override');
 
 //Connect to Database
 db.connect();
 
 const port = 3000;
+
+app.use(methodOverride('_method'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({
