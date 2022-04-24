@@ -9,7 +9,6 @@ const route = require('./routes');
 
 //Database
 const db = require('./config/db');
-const methodOverride = require('method-override');
 
 //Connect to Database
 db.connect();
