@@ -15,6 +15,9 @@ class ProductController {
             .catch(next);
         
     }
+    //Show shoping bag
+    shoppingbag(req, res) {
+        res.render('products/shoppingbag')}
 };
 
 module.exports = new ProductController();

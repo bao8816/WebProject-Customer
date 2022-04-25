@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --inspect ./src/index.js",
-    "sass": "sass --watch ./src/resources/sass/home.scss:./src/public/css/home.css ./src/resources/sass/iden.scss:./src/public/css/iden.css ./src/resources/sass/profile.scss:./src/public/css/profile.css",
+    "sass": "sass --watch ./src/resources/sass/home.scss:./src/public/css/home.css ./src/resources/sass/iden.scss:./src/public/css/iden.css ./src/resources/sass/profile.scss:./src/public/css/profile.css ./src/resources/sass/shoppingbag.scss:./src/public/css/shoppingbag.css",
     "prettier": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

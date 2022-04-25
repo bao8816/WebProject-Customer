@@ -10,5 +10,5 @@ router.post('/signup',customerController.signupr);
 router.post('/login',customerController.loginr);
 router.get('/:slug', productController.show);
 router.get('/', customerController.home);
-
+router.get('/mybag', productController.shoppingbag);
 module.exports = router;
