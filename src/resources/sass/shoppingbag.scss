@@ -9,7 +9,17 @@
 	padding: 0;
 
 	box-sizing: border-box;
+    
+    
+}
 
+
+body{
+    background-image: url("/images/background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    overflow-x: hidden;
+    color: white;
 }
 
 .container{
@@ -17,7 +27,7 @@
 	max-width: 1200px;
 
 	margin: 0 auto;
-
+    
 }
 
 .container > h1{
