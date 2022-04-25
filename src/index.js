@@ -2,6 +2,9 @@ const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
+const passport = require('passport');
+const session = require('express-session');
+const expressHandlebarsSections = require('express-handlebars-sections');
 const app = express();
 
 //Require Route
@@ -24,11 +27,30 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 app.engine('hbs', exphbs.engine({
-  extname: '.hbs'
+  extname: '.hbs',
+  helpers: {
+    section: expressHandlebarsSections(),
+  }
 }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
+//-------Passport Config-------
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false
+  // store: MongoStore.create({
+  //   mongoUrl: 'mongodb://localhost:27017/web_project'
+  // })
+}));
+app.use(passport.authenticate('session'));
 
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  next();
+}
+);
+//--------------------------------
 // ------Routes------
 route(app);
 /*-----End route----*/
