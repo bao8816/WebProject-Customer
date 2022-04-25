@@ -1,4 +1,5 @@
 const Product = require('../models/Product');
+const Cartstemp= require('../models/cartstemp');
 const { multipleMongooseToObject } = require('../../util/mongoose');
 const Customer_profile = require('../models/Customer_profile');
 class CustomerController {
@@ -7,10 +8,12 @@ class CustomerController {
 
         Product.find({})
         .then(products => { 
+            
             res.render('home', {
                 layout: 'home-layout',
                 products: multipleMongooseToObject(products)
             }); 
+            
         })
         .catch(err => { 
             next(err); 
