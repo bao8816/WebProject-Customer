@@ -1,108 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+:root {
+  --main-color:#DD2F6E;
+  --color-dark:#1D2231;
+  --text-grey:#8390A2;
+}
+
 * {
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
+.search-wrapper {
+  height: 90px;
+  padding: 1rem 0rem 1rem 2rem;
+  color: black;
+}
+
+.search-wrapper span {
   display: inline-block;
-  border: 1px solid #ddd;
-  color: white;
-  background: black;
+  padding-left: 1rem;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+.main-content {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
 }
 
-hr {
-  border: 1px solid #ddd;
-  margin-bottom: 25px;
+#myDIV {
+  padding: 1rem;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Set a style for all buttons */
-button {
-  background-color: black;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
+.user-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.user-wrapper img {
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.user-wrapper small {
+  display: inline-block;
+  color: var(--text-grey);
+  margin-top: -10px !important;
+}
+
+.main {
+  margin-top: 89px;
+  padding: 2rem 1.5rem;
+  background: #f0f0f0;
+  min-height: calc(100vh - 90px);
+}
+
+.project {
+  margin-top: 3.5rem;
+  grid-gap: 2rem;
+  grid-template-columns: 65% auto;
   width: 100%;
-  opacity: 0.9;
 }
 
-button:hover {
-  opacity: 1;
+.status.purple {
+  color: rebeccapurple;
 }
 
-/* Extra styles for the cancel button */
-.login9, .login {
-  padding: 14px 20px;
+.status.pink {
+  color: deeppink;
 }
 
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: black;
-  border: 1px solid white;
+.status.orange {
+  color: orangered;
 }
 
-/* Float cancel and signup buttons and add an equal width */
-.login, .signupbtn {
-  float: left;
-  border: 1px solid white;
-  width: 50%;
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
 }
 
-.login9 {
-  border: 1px solid #ddd;
-  width: 20%;
+a {
+  text-decoration: none;
+  color: #555;
 }
 
-html {
-  background-color: black;
+.logo-wrapper {
+  margin-left: -13%;
 }
 
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-  color: white;
-  max-width: 70rem;
-  margin: 0 auto;
+.logo-wrapper a {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.heads {
-  margin-top: 7rem;
-  background: url(../images/home-bg.png);
-  background-size: 100%;
-  background-position: top;
-  position: relative;
+.error {
+  color: red;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
-span.psw {
-  float: right;
-  padding-top: 16px;
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background: rgb(204, 202, 202);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+form .box {
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  color: black;
+  background: white;
+  border: 0.2rem solid rgba(255, 255, 255, 0.3);
+  text-transform: none;
+  width: 100%;
+  margin: 0.7rem 0;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 30px) {
-  .login9, .login, .signupbtn {
-    width: 100%;
+form .box:focus {
+  border-color: black;
+}
+
+form .btn {
+  background: white;
+  margin: 10px;
+}
+
+form .btn:hover {
+  background: var(--main-color);
+}
+
+.nav-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btns .btn {
+  text-align: center;
+}
+
+@media only screen and (max-width = 1200px) {
+  .sidebar {
+    width: 70px;
   }
 
-  .cancelbtn {
-    width: 100%;
+  .sidebar .search-wrapper,
+.sidebar li {
+    padding-left: 1rem;
+    text-align: center;
+  }
+
+  .sidebar .search-wrapper h2 span:last-child,
+.sidebar li a span:last-child {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 70px;
   }
 }
 

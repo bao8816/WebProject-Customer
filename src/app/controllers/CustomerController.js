@@ -1,6 +1,6 @@
 const Product = require('../models/Product');
 const { multipleMongooseToObject } = require('../../util/mongoose');
-
+const Customer_profile = require('../models/Customer_profile');
 class CustomerController {
     //GET "/"
     home(req, res, next) {
@@ -20,7 +20,18 @@ class CustomerController {
 
     //GET "/profile"
     profile(req, res) {
-        res.render('profile', {layout: 'profile-layout'})
+        if (!req.user) {
+            res.redirect('/login');
+        }
+        else {
+            Customer_profile.findOne({email: req.user.email})
+                .then(profile => {  
+                    res.render('profile', {
+                        layout: 'profile-layout',
+                        profile: mongooseToObject(profile)
+                    });
+                })
+        }
     };
 };
 
