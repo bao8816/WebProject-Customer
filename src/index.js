@@ -9,6 +9,10 @@ const route = require('./routes');
 
 //Database
 const db = require('./config/db');
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 //Connect to Database
 db.connect();
