@@ -17,7 +17,8 @@ class ProductController {
     }
     //Show shoping bag
     shoppingbag(req, res) {
-        res.render('products/shoppingbag')}
+        res.render('products/shoppingbag', {layout: 'shoppingbag-layout'})
+    }
 };
 
 module.exports = new ProductController();
