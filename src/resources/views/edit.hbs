@@ -1,0 +1,41 @@
+
+<body>
+	
+	<div class="section">\
+	
+		<div class="container">
+			<div class="content-section">
+				<div class="title">
+					<h1>Edit Profile </h1>
+				</div>
+				<div class="Editprofile">
+					<form action="/profile/{{profile._id}}?_method=PUT" method="POST" >
+                        <label for="name"> Name </label>
+                        <input value="{{profile.name}}" id="name" name="name" type="text" placeholder="Change from [{{profile.name}}] to ..." class="box"><br><br>
+                        
+                        <label for="birth"> Date of birth </label>
+                        <input value="{{profile.birth}}" id="birth" name="birth" type="text" placeholder="Change from [{{profile.birth}}] to ..." class="box"><br><br>
+                        
+                        <label for="gender"> Gender </label>
+                        <input value="{{profile.gender}}" id="gender" name="gender" type="text" placeholder="Change from [{{profile.gender}}] to ..." class="box"><br><br>
+                        
+                        <label for="phone"> Phone number </label>
+                        <input value="{{profile.phone}}" id="phone" name="phone" type="text" placeholder="Change from [{{profile.phone}}] to ..." class="box"><br><br>
+                        
+                        <label for="address"> Address </label>
+                        <input value="{{profile.address}}" id="address" name="address" type="text" placeholder="Change from [{{profile.address}}] to ..." class="box"><br><br>
+                        
+                        <label for="image"> Image </label>
+                        <input value="{{profile.image}}" id="image" name="image" type="text" placeholder="Change from [{{profile.image}}] to ..." class="box"><br><br>
+                         <button type="submit" class="btn">Update</button>
+                    </form>
+				</div>
+				
+			
+			</div>
+			
+		</div>
+	</div>
+
+
+</body>

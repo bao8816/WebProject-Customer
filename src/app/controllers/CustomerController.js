@@ -1,7 +1,14 @@
 const Product = require('../models/Product');
+<<<<<<< Updated upstream
 const Cart= require('../models/Cart');
 const { multipleMongooseToObject,mongooseToObject } = require('../../util/mongoose');
+=======
+const Cartstemp= require('../models/cartstemp');
+const { multipleMongooseToObject, mongooseToObject } = require('../../util/mongoose');
+>>>>>>> Stashed changes
 const Customer_profile = require('../models/Customer_profile');
+const mongoose = require('../../util/mongoose');
+const { findById } = require('../models/Product');
 class CustomerController {
     //GET "/"
     home(req, res, next) {
@@ -23,20 +30,50 @@ class CustomerController {
     };
 
     //GET "/profile"
-    profile(req, res) {
+    profile(req, res,next) {
         if (!req.user) {
             res.redirect('/login');
         }
         else {
             Customer_profile.findOne({email: req.user.email})
-                .then(profile => {  
+                .then(customer_profile => {  
                     res.render('profile', {
                         layout: 'profile-layout',
-                        profile: mongooseToObject(profile)
+                        profile: mongooseToObject(customer_profile)
                     });
                 })
+                .catch(err => {
+                    next(err);
+                });
+            
         }
     };
+    editcustomer(req,res,next) {
+            if(!req.user) {
+                res.redirect('/login');
+            }   
+            else {
+                Customer_profile=>findById({_id: req.params.id})
+                .then(customer_profile => {
+                    res.render('edit', {
+                        layout: 'edit-layout',
+                        profile: mongooseToObject(customer_profile)
+                    });
+                });
+            }
+        }
+    updatecustomer(req,res,next) {
+        if(!req.user) {
+            res.redirect('/login');
+        }
+        else {
+            Customer_profile.findOneAndUpdate({_id: req.params.id}, req.body)
+            .then(customer_profile => {
+                res.redirect('/profile');
+            });
+        }
+    }
+    
 };
 
 module.exports = new CustomerController();
