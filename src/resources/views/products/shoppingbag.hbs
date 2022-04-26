@@ -8,23 +8,16 @@
 		<div class="products">
 			{{#each products}}
 			<div class="product">
-				<img src="/images/blog-1.jpg">
-<<<<<<< Updated upstream
+				<img src="{{this.product_id.image}}">
 				
-=======
->>>>>>> Stashed changes
 
 				<div class="product-info">
 
-					<h3 class="product-name">{{this.name}}</h3>
+					<h3 class="product-name">{{this.product_id.name}}</h3>
 
-					<h4 class="product-price">{{this.price}}</h4>
+					<h4 class="product-price">${{this.product_id.price}}</h4>
 
-<<<<<<< Updated upstream
-					<p class="product-quantity">Qnt: <input value={{this.quality}} name="">
-=======
-					<p class="product-quantity">Qnt: <input value="{{temp}}" name="">
->>>>>>> Stashed changes
+					<p class="product-quantity">Qnt: <input value={{this.quantity}}></p>
 
 					<p class="product-remove">
 
@@ -38,31 +31,7 @@
 			</div>
 			{{/each}}
 
-			<div class="product">
-
-				<img src="bag1.jpg">
-
-				<div class="product-info">
-
-					<h3 class="product-name">New Bag</h3>
-
-					<h4 class="product-price">₹ 2,000</h4>
-
-					<h4 class="product-offer">40%</h4>
-
-					<p class="product-quantity">Qnt: <input value="1" name="">
-
-					<p class="product-remove">
-
-						<i class="fa fa-trash" aria-hidden="true"></i>
-
-						<span class="remove">Remove</span>
-
-					</p>
-
-				</div>
-
-			</div>
+			
 
 		</div>
 
@@ -72,7 +41,7 @@
 
 				<span>Total Price</span>
 
-				<span>₹ 3,000</span>
+				<span>$3</span>
 
 			</p>
 
@@ -88,7 +57,7 @@
 
 				<span>You Save</span>
 
-				<span>₹ 1,000</span>
+				<span>$0</span>
 
 			</p>
 
