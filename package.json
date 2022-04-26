@@ -4,6 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+  
+    "dev": "nodemon --inspect ./src/index.js",
     "start": "nodemon --inspect ./src/index.js",
     "sass": "sass --watch ./src/resources/sass/home.scss:./src/public/css/home.css ./src/resources/sass/iden.scss:./src/public/css/iden.css ./src/resources/sass/profile.scss:./src/public/css/profile.css ./src/resources/sass/shoppingbag.scss:./src/public/css/shoppingbag.css ./src/resources/sass/edit.scss:./src/public/css/edit.css",
     "prettier": "lint-staged",
