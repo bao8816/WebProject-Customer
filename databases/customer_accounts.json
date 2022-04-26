@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "6267473719fc9619018b6ba7"
+  },
+  "email": "tipha230@gmail.com",
+  "password": "$2a$10$Fg4K3lSIWljMLsP3b2xCa.9JQh1.uAxM5RpPRiqsGODV5Hy0VdhQy",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650935607792"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650935607792"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6267c21fdd02ff91507ff64d"
+  },
+  "email": "llstylish147@gmail.com",
+  "password": "$2a$10$dhS1peg7XtWuas4iDprap.0t0FDDkIZtK4kFa7qQ2aEPEi6n2vaAG",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650967071637"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650967071637"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6267dbdafa04a02205b0b516"
+  },
+  "email": "quynh@gmail.com",
+  "password": "$2a$10$LjPhOHcCiOEU6pUAav93bOF/C4Y1.R7nVODdT7RuM6Q8d7ud3lhC6",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650973658152"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650973658152"
+    }
+  },
+  "__v": 0
+}]

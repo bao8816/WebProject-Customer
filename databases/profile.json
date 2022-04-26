@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "6267473719fc9619018b6ba8"
+  },
+  "email": "tipha230@gmail.com",
+  "name": "Nguyễn Trung Tín",
+  "birth": "17/01/2001",
+  "gender": "Male",
+  "phone": "0967312577",
+  "address": "My Duc",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650935607792"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650973866081"
+    }
+  },
+  "slug": "tipha230-gmail-com",
+  "__v": 0,
+  "image": ""
+},{
+  "_id": {
+    "$oid": "6267c21fdd02ff91507ff64e"
+  },
+  "email": "llstylish147@gmail.com",
+  "name": "Zegurt",
+  "birth": "25/04/2022",
+  "gender": "Male",
+  "phone": "011111111",
+  "address": "Quận 7",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650967071637"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650967071637"
+    }
+  },
+  "slug": "llstylish147-gmail-com",
+  "__v": 0
+}]
