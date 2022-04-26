@@ -2,6 +2,7 @@ const Customer_account = require('../models/Customer_account');
 const Customer_profile = require('../models/Customer_profile');
 const bcrypt = require('bcryptjs');
 const { multipleMongooseToObject } = require('../../util/mongoose');
+const Cart = require('../models/Cart');
 
 class AuthController {
     show_login(req, res) {
@@ -60,6 +61,13 @@ class AuthController {
                         address: ''
                     });
                     newProfile.save()
+                    const newCart=new Cart({
+                        email: username,
+                        products:[
+
+                        ]
+                    });
+                    newCart.save()
                 })
             })
     }

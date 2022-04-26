@@ -1,7 +1,7 @@
 <!-- header section starts  -->
 
 <header class="header">
-
+   
    <div id="menu-btn" class="fas fa-bars icons"></div>
    <div id="search-btn" class="fas fa-search icons"></div>
 
@@ -117,11 +117,13 @@
             
             <div class="price">${{this.price}}</div>
             <p>{{this.description}}</p>
-            {{#if user}}{
-               <a class="btn" onclick="">add to cart</a>}
-            {{else}} {
+            {{#if ../user}}{
+               <form   acction="/{{this._id}}?_method=PUT" method="POST">
+                  <button type="submit" class="btn">add to cart</button>
+               </form>
+               }
+            {{else}} 
                <a href="/login" class="btn">add to cart</a>
-            }
             {{/if}}
             
          </div>
@@ -360,6 +362,5 @@
 
 <!-- footer section ends -->
 <script>
-
 
 </script>

@@ -1,6 +1,6 @@
 const Product = require('../models/Product');
-const Cartstemp= require('../models/cartstemp');
-const { multipleMongooseToObject } = require('../../util/mongoose');
+const Cart= require('../models/Cart');
+const { multipleMongooseToObject,mongooseToObject } = require('../../util/mongoose');
 const Customer_profile = require('../models/Customer_profile');
 class CustomerController {
     //GET "/"
@@ -18,6 +18,7 @@ class CustomerController {
         .catch(err => { 
             next(err); 
         });
+        
 
     };
 
