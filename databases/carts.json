@@ -1,0 +1,17 @@
+[{
+    "_id": {
+      "$oid": "6267ae09845190419caecc15"
+    },
+    "email": "loichuanhuynh@gmail.com",
+    "products": [
+      {
+        "product_id": "6249523c93593192db6e344f",
+        "quantity" : 2
+      },
+      {
+        "product_id": "6249623493593192db6e3452",
+        "quantity" : 3
+      }
+    ],
+    "-v":0
+  }]
