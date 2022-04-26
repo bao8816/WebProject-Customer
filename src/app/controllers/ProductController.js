@@ -19,7 +19,6 @@ class ProductController {
         
     }
     //Show shoping bag
-<<<<<<< Updated upstream
     shoppingbag(req, res,next) {
         if(!req.user){
             res.redirect('/login');
@@ -75,10 +74,6 @@ class ProductController {
                 .catch(err)
              
         }
-=======
-    shoppingbag(req, res) {
-        res.render('products/shoppingbag', {layout: 'shoppingbag-layout',temp:2});
->>>>>>> Stashed changes
     }
 };
 

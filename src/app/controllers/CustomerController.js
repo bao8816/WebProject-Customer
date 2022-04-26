@@ -1,11 +1,6 @@
 const Product = require('../models/Product');
-<<<<<<< Updated upstream
 const Cart= require('../models/Cart');
 const { multipleMongooseToObject,mongooseToObject } = require('../../util/mongoose');
-=======
-const Cartstemp= require('../models/cartstemp');
-const { multipleMongooseToObject, mongooseToObject } = require('../../util/mongoose');
->>>>>>> Stashed changes
 const Customer_profile = require('../models/Customer_profile');
 const mongoose = require('../../util/mongoose');
 const { findById } = require('../models/Product');
@@ -53,14 +48,18 @@ class CustomerController {
                 res.redirect('/login');
             }   
             else {
-                Customer_profile=>findById({_id: req.params.id})
+                Customer_profile.findById(req.params.id)
                 .then(customer_profile => {
                     res.render('edit', {
                         layout: 'edit-layout',
                         profile: mongooseToObject(customer_profile)
                     });
+                })
+                .catch(err => {
+                    next(err);
                 });
-            }
+
+                }
         }
     updatecustomer(req,res,next) {
         if(!req.user) {
