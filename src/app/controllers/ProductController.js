@@ -38,43 +38,45 @@ class ProductController {
             
         }
     }
-    addcart(req,res){
+    // addcart(req,res){
         
-        if(!req.user){
-            res.redirect('/login');
+    //     if(!req.user){
+    //         res.redirect('/login');
 
-        }
-        else{ 
-            Cart.findOne({email: req.user.email})
-                .then(cart=> {
-                    cart.products.findOne({product_id: req.params.id})
-                        .then(product=> product.quantity+=1 ,
-                            product.save(),
-                            cart.save())
-                        .catch(err=> {
-                            cart.updateOne(
-                                {email: req.user.email},
-                                {
-                                    products: [
-                                        {
-                                            $push:{
+    //     }
+    //     else{ 
+    //         Cart.findOne({email: req.user.email})
+    //             .then(cart=> {
+    //                 cart.products.findOne({product_id: req.params.id})
+    //                     .then(product=> product.quantity+=1 ,
+    //                         product.save(),
+    //                         cart.save())
+    //                     .catch(err=> {
+    //                         cart.updateOne(
+    //                             {email: req.user.email},
+    //                             {
+    //                                 products: [
+    //                                     {
+    //                                         $push:{
                                                 
-                                                product_id: req.params.id,
-                                                quantity: 1,
+    //                                             product_id: req.params.id,
+    //                                             quantity: 1,
                                                 
-                                            }
-                                        }
-                                    ]
-                                }
-                            )
+    //                                         }
+    //                                     }
+    //                                 ]
+    //                             }
+    //                         )
                         
                         
-                        });
-                })
-                .catch(err)
+    //                     });
+    //             })
+    //             .catch(err){
+                    
+    //             }
              
-        }
-    }
+    //     }
+    // }
 };
 
 module.exports = new ProductController();

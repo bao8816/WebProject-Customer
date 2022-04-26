@@ -48,11 +48,11 @@ class CustomerController {
                 res.redirect('/login');
             }   
             else {
-                Customer_profile.findById(req.params.id)
-                .then(customer_profile => {
+                Customer_profile.findOne({email: req.user.email})
+                .then(customer_profiles => {
                     res.render('edit', {
                         layout: 'edit-layout',
-                        profile: mongooseToObject(customer_profile)
+                        profile: mongooseToObject(customer_profiles)
                     });
                 })
                 .catch(err => {
