@@ -6,7 +6,7 @@ const passport = require('passport');
 const session = require('express-session');
 const expressHandlebarsSections = require('express-handlebars-sections');
 const app = express();
-
+const process = require('process');
 //Require Route
 const route = require('./routes');
 
@@ -16,7 +16,7 @@ const db = require('./config/db');
 //Connect to Database
 db.connect();
 
-const port = 3000;
+const port = process.env.PORT||3000;
 
 app.use(methodOverride('_method'));
 
